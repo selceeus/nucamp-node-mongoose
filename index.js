@@ -10,16 +10,16 @@ const connect = mongoose.connect(url, {
 });
 
 connect.then(() => {
-    console.log('Connected correctly to server');
-    const newCampsite = new Campsite({
-        name: 'React Lake Campground ',
-        description: 'test'
-    });
 
-    newCampsite.save()
+    console.log('Connected correctly to server');
+
+    Campsite.create({
+        name: 'React Lake Campground',
+        description: 'test'
+    })
     .then(campsite => {
         console.log(campsite);
-        return campsite.find();
+        return Campsite.find();
     })
     .then(campsites => {
         console.log(campsites);
@@ -31,5 +31,5 @@ connect.then(() => {
     .catch(err => {
         console.log(err);
         mongoose.connection.close();
-    })
+    });
 });

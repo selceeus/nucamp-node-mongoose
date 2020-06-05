@@ -15,6 +15,6 @@ const campsiteSchema = new Schema({
     timestamps: true
 });
 
-const campsites = mongoose.model('Campsite', campsiteSchema);
+const Campsite  = mongoose.model('Campsite', campsiteSchema);
 
 module.exports = Campsite;

@@ -12,7 +12,7 @@ const connect = mongoose.connect(url, {
 connect.then(() => {
     console.log('Connected correctly to server');
     const newCampsite = new Campsite({
-        name: 'React Lake Campground',
+        name: 'React Lake Campground ',
         description: 'test'
     });
 
